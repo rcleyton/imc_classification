@@ -1,6 +1,7 @@
 class Imc < ApplicationRecord
   validates :height, :weight, presence: true
 
+  before_validation :calculate_imc, :health_status
   
   private
   def calculate_imc
